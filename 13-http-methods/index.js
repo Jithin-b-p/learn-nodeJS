@@ -8,4 +8,5 @@ app.get("/api/users", (req, res) => {
   res.send(users);
 });
 
+//post method -> insert data
 app.listen(3000, () => console.log("Server starts running at port 3000.."));
