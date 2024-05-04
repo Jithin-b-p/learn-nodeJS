@@ -1,6 +1,8 @@
 const express = require("express");
 const logger = require("./logger");
 const authorize = require("./authorize");
+const morgan = require("morgan");
+
 const app = express();
 
 // req  => middleware => res
@@ -28,6 +30,8 @@ morgan is a third party middleware used as logger
 // multiple middleware
 // app.use("/api", [logger, authorize]);
 
+app.use(morgan("tiny"));
+
 app.get("/", (req, res) => {
   res.send("Home page");
 });
@@ -36,7 +40,10 @@ app.get("/about", (req, res) => {
   res.send("about page");
 });
 
-app.get("/api/users", [logger, authorize], (req, res) => {
+// app.get("/api/users", [logger, authorize], (req, res) => {
+//   res.send(req.user);
+// });
+app.get("/api/users", authorize, (req, res) => {
   res.send(req.user);
 });
 
