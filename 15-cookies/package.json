@@ -1,0 +1,19 @@
+{
+  "name": "15-cookies",
+  "version": "1.0.0",
+  "main": "index.mjs",
+  "scripts": {
+    "start:dev": "nodemon ./index.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.19.2"
+  }
+}
