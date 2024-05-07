@@ -1,0 +1,22 @@
+{
+  "name": "16-auth-with-passportjs",
+  "version": "1.0.0",
+  "main": "index.mjs",
+  "scripts": {
+    "start:dev": "nodemon ./index.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
