@@ -1,0 +1,21 @@
+{
+  "name": "18-hashing-password",
+  "version": "1.0.0",
+  "main": "index.mjs",
+  "scripts": {
+    "start:dev": "nodemon index.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "express": "^4.19.2",
+    "mongodb": "^6.6.1",
+    "mongoose": "^8.3.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
