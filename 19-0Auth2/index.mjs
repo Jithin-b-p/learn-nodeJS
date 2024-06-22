@@ -33,7 +33,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.get("/api/auth/discord/status", (req, res) => {
-  console.log("sessionid", req.sessionID);
   if (!req.user) {
     return res
       .status(404)
@@ -49,7 +48,7 @@ app.get(
   "/api/auth/discord/redirect",
   passport.authenticate("discord"),
   (req, res) => {
-    res.status(200).send();
+    res.sendStatus(200);
   }
 );
 

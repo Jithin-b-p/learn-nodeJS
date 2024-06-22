@@ -1,0 +1,20 @@
+{
+  "name": "20-auth-jwt",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "nodemon --env-file .env ./index.js"
+  },
+  "keywords": [],
+  "type": "module",
+  "author": "Jithin B P",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
