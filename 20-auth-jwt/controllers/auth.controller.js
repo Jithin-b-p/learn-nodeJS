@@ -1,5 +1,6 @@
 import { User } from "../models/user.model.js";
 import { hashPassword } from "../util/hashing.js";
+import jwt from "jsonwebtoken";
 
 export const signup = async (req, res) => {
   const { username, password, email } = req.body;
@@ -17,9 +18,17 @@ export const signup = async (req, res) => {
       password: hashedPassword,
     });
 
+    const accessToken = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
+      expiresIn: "2m",
+    });
+
     return res
+      .cookie("access_token", accessToken, {
+        httpOnly: true,
+        secure: true,
+      })
       .status(200)
-      .json({ status: "success", message: "account created successfully!!" });
+      .json({ status: "success", message: "account created successfully" });
   } catch (error) {
     return res.status(500).json({ status: "failure", message: error.message });
   }

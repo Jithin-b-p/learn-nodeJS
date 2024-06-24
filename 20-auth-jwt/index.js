@@ -1,16 +1,19 @@
 import express from "express";
 import authRouter from "./routes/auth.route.js";
 import { connectDB } from "./db/connect.db.js";
+import cookieParser from "cookie-parser";
+import { verifyToken } from "./middleware/verifyToken.js";
 
 const PORT = process.env.PORT || 3000;
 
 const app = express();
 
+app.use(cookieParser());
 app.use(express.json());
-app.use("/api/auth", authRouter);
 
-app.get("/", (req, res) => {
-  res.send("Welcome");
+app.use("/api/auth", authRouter);
+app.use("/api/resources", verifyToken, (req, res) => {
+  res.status(200).json({ status: "success", message: "access resources" });
 });
 
 const startServer = async () => {
