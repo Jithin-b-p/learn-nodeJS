@@ -22,6 +22,8 @@ export const signup = async (req, res) => {
       expiresIn: "2m",
     });
 
+    const refreshToken = jwt.sign({ id });
+
     return res
       .cookie("access_token", accessToken, {
         httpOnly: true,
