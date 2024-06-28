@@ -1,9 +1,9 @@
 {
   "name": "21-postgresql",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./dist/server.js",
   "scripts": {
-    "start:dev": "node ./dist/server.js"
+    "start:dev": "nodemon --env-file .env ./dist/server.js"
   },
   "keywords": [],
   "author": "",
