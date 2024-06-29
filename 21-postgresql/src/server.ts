@@ -7,6 +7,7 @@ import {
   getTodoFromUserId,
   getUserIdFromEmail,
 } from "./get-from-table.js";
+import { updateTodo } from "./update-table.js";
 
 const app = express();
 
@@ -23,6 +24,8 @@ const app = express();
 // createTable();
 
 // getAllUsers();
-const id = await getUserIdFromEmail("jithinbp007@gmail.com");
 
-getTodoFromUserId(id);
+// const id = await getUserIdFromEmail("jithinbp007@gmail.com");
+// getTodoFromUserId(id);
+
+updateTodo(1);
