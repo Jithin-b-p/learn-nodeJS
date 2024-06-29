@@ -2,6 +2,11 @@ import express from "express";
 import { getClient } from "./db/db.config.js";
 import { createTable } from "./create-table.js";
 import { insertIntoTable } from "./insert-into-table.js";
+import {
+  getAllUsers,
+  getTodoFromUserId,
+  getUserIdFromEmail,
+} from "./get-from-table.js";
 
 const app = express();
 
@@ -17,4 +22,7 @@ const app = express();
 // start();
 // createTable();
 
-insertIntoTable();
+// getAllUsers();
+const id = await getUserIdFromEmail("jithinbp007@gmail.com");
+
+getTodoFromUserId(id);
