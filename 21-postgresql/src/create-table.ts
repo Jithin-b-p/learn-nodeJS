@@ -1,4 +1,4 @@
-import { connectDB } from "./db/db.config.js";
+import { getClient } from "./db/db.config.js";
 
 export const createTable = async () => {
   const createUserTableQuery = `CREATE TABLE users (
@@ -16,9 +16,11 @@ export const createTable = async () => {
   )`;
 
   try {
-    const client = await connectDB();
+    const client = await getClient();
     client.query(createUserTableQuery);
     client.query(createTodoTableQuery);
+
+    console.log("table created successully!");
   } catch (error) {
     console.log("error in querying");
   }

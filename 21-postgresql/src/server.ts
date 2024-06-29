@@ -1,6 +1,7 @@
 import express from "express";
-import { connectDB } from "./db/db.config.js";
+import { getClient } from "./db/db.config.js";
 import { createTable } from "./create-table.js";
+import { insertIntoTable } from "./insert-into-table.js";
 
 const app = express();
 
@@ -14,4 +15,6 @@ const app = express();
 // };
 
 // start();
-createTable();
+// createTable();
+
+insertIntoTable();
