@@ -8,6 +8,8 @@ import {
   getUserIdFromEmail,
 } from "./get-from-table.js";
 import { updateTodo } from "./update-table.js";
+import { deleteFromTodo } from "./delete-from-table.js";
+import { getDetailsFromTables } from "./joins/join-tables.js";
 
 const app = express();
 
@@ -23,9 +25,15 @@ const app = express();
 // start();
 // createTable();
 
+// insertIntoTable();
+
 // getAllUsers();
 
 // const id = await getUserIdFromEmail("jithinbp007@gmail.com");
 // getTodoFromUserId(id);
 
-updateTodo(1);
+// updateTodo(1);
+
+// deleteFromTodo(1);
+
+getDetailsFromTables(2);
