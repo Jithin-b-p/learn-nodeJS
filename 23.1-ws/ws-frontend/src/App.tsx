@@ -2,13 +2,15 @@ import { useEffect, useRef, useState } from "react";
 import "./App.css";
 
 function App() {
-  const [socket, setSocket] = useState();
-  const inputRef = useRef();
+  const [socket, setSocket] = useState<WebSocket | null>();
+  const inputRef = useRef<HTMLInputElement | null>(null);
 
   function sendMessage() {
-    const message = inputRef.current.value;
-    // @ts-ignore
-    socket.send(message);
+    if (socket && inputRef.current) {
+      const message = inputRef.current.value;
+
+      socket.send(message);
+    }
   }
 
   useEffect(() => {
